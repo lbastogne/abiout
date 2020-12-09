@@ -753,6 +753,7 @@ void HistDataNC::readFromFile(const std::string& filename) {
 //
 void HistDataNC::dump(const std::string& filename, unsigned tbegin, unsigned tend, unsigned step) const {
   unsigned ntime = tend-tbegin;
+  this->waitTime(_ntime);
   try {
     HistData::checkTimes(tbegin,tend);
     this->waitTime(tend);
